@@ -22,13 +22,13 @@ function generatePassword() {
     var passwordLength = document.getElementById("range").value;
     var password = "";
 
-    //at least one character type is selected
+    // atleast one character type is selected //
     if (character === "") {
         alert("Please select at least one character type.");
         return;
     }
 
-    // Include at least one character from each selected type
+    // Include at least one character from each selected type //
     if (document.getElementById("upercase").checked) {
         password += upercase[Math.floor(Math.random() * upercase.length)];
     }
@@ -42,9 +42,10 @@ function generatePassword() {
         password += special[Math.floor(Math.random() * special.length)];
     }
 
-    // Generate the remaining characters for the password
+    // Generate the remaining characters for the password //
     for (var i = password.length; i < passwordLength; i++) {
         var randomIndex = Math.floor(Math.random() * character.length);
+        console.log(randomIndex)
         password += character[randomIndex];
     }
 
